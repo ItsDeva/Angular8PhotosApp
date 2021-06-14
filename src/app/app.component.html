@@ -1,0 +1,15 @@
+<h2 class="center">Photos</h2>
+<app-loader *ngIf="loader"></app-loader>
+<div *ngFor="let i of hits" class="box bordertest">
+  <div class="ribbon"><span>NEW</span></div>
+  <div>
+    <img src="{{i.previewURL}}" alt="{{i.id}}" />
+  </div>
+  <div class="photodetails">
+    <h5>ID: {{i.id}}</h5>
+    <h5>Likes: {{i.likes}}</h5>
+    <h5>User ID: {{i.user}}</h5>
+  </div>
+</div>
+<br/>
+<div class="full-button center" *ngIf="loadMore" (click)="nextBatch()">Next</div>
